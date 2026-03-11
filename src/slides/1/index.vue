@@ -50,7 +50,7 @@ onMounted(async () => {
 
   <Button
     :show="state.historyBtn"
-    top="73"
+    top="80"
     @click="
       async () => {
         state.historyBtn = false
@@ -70,8 +70,8 @@ onMounted(async () => {
     :show="state.legendDescription"
     string="Кнопка Примечания при нажатии на которую появляется подсказка с расшифровкой аббревиатур"
     :img="legendDescription"
-    top="50"
-    left="5"
+    top="45"
+    left="8"
     width="35"
     height="20"
     class="legend-description"
@@ -81,7 +81,7 @@ onMounted(async () => {
     :show="state.mission"
     string="Добро пожаловать в квест «Машина времени». Ваша задача - проанализировать историю болезни пациента, изменить антикоагулянтную терапию, чтобы предотвратить инсульт."
     type="mission"
-    height="30"
+    height="25"
     @print-ended="state.missionBtn = true"
   />
 

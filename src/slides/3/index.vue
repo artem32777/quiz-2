@@ -72,7 +72,7 @@ onMounted(async () => {
     :show="state.history"
     string="Пациент: И., 70 лет <br />Диагноз при поступлении: Ишемический инсульт <br />(правосторонний гемипарез средней степени тяжести, афазия)"
     top="2"
-    height="10"
+    height="7"
     @print-ended="
       async () => {
         state.buttons = true
@@ -109,7 +109,7 @@ onMounted(async () => {
   <Button
     :show="!!activeOption"
     top="75"
-    @click="router.push('/5')"
+    @click="router.push('/4')"
   >
     НАЧАТЬ ПУТЕШЕСТВИЕ
   </Button>
@@ -120,7 +120,7 @@ onMounted(async () => {
   display: flex;
   justify-content: space-around;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 0;
   width: 100%;
 }

@@ -40,19 +40,18 @@ onMounted(async () => {
     @click="router.push('/3')"
     class="timeline-btn"
     :class="{ active: state.timelineBtn }"
-  >
-    <i class="timeline-btn-icon" />
-  </button>
+  />
 </template>
 
 <style scoped lang="scss">
 .timeline-btn {
   position: absolute;
-  bottom: 10%;
-  left: 5%;
+  bottom: 11%;
+  left: 6%;
   width: 15vw;
   height: 15vw;
   pointer-events: none;
+  border-radius: 50%;
 
   &.active {
     pointer-events: auto;
@@ -60,21 +59,8 @@ onMounted(async () => {
 
   @media (any-hover: hover) {
     &:hover {
-      .timeline-btn-icon {
-        backdrop-filter: saturate(3);
-      }
+      backdrop-filter: saturate(3);
     }
   }
-}
-
-.timeline-btn-icon {
-  position: absolute;
-  bottom: 40%;
-  left: 38.5%;
-  width: 5vw;
-  height: 5vw;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: backdrop-filter 0.3s ease 0s;
 }
 </style>

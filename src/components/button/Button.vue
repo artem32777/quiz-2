@@ -42,8 +42,8 @@ const { clickSound } = useSounds()
 .button {
   box-shadow: 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.55);
   border-radius: 30px;
-  font-size: 60px;
-  padding: 40px 70px;
+  font-size: 2vw;
+  padding: 1.5vw 3vw;
   position: absolute;
   z-index: 30;
   display: flex;

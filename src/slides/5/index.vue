@@ -42,7 +42,7 @@ onMounted(async () => {
     string="2021 год. У пациента CHA2DS2-VASc 4 балла. <br> Согласно Европейским и Российским клиническим
             рекомендациям, показана антикоагулянтная терапия. <br>Какой препарат вы назначите?"
     top="2"
-    height="10"
+    height="7"
     @print-ended="
       async () => {
         state.plate = true
@@ -90,7 +90,8 @@ onMounted(async () => {
 }
 
 .plate {
-  width: 100%;
+  width: 100vw;
+  height: 20vw;
 }
 
 .drugs {
@@ -125,25 +126,25 @@ onMounted(async () => {
   }
 
   &:nth-child(1) {
-    top: -25%;
+    top: -40%;
     left: 5%;
     animation-delay: 0s;
   }
 
   &:nth-child(2) {
-    top: 0;
+    top: -20%;
     left: 30%;
     animation-delay: 0.5s;
   }
 
   &:nth-child(3) {
-    top: -30%;
+    top: -60%;
     left: 55%;
     animation-delay: 1s;
   }
 
   &:nth-child(4) {
-    top: -10%;
+    top: -40%;
     left: 80%;
     animation-delay: 1.5s;
   }

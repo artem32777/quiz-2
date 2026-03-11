@@ -75,8 +75,8 @@ onMounted(async () => {
   <Text
     :show="state.medicalData"
     width="50"
-    height="35"
-    top="5"
+    height="30"
+    top="15"
     type="medical-card"
     class="medical-card"
   >
@@ -107,12 +107,12 @@ onMounted(async () => {
   <Text
     :show="state.summary"
     width="50"
-    height="35"
-    top="5"
+    height="30"
+    top="15"
     type="medical-card"
     class="medical-card"
   >
-    <h3 class="title">Расчет CHA2DS2VASc</h3>
+    <h3 class="title">Расчет CHA₂DS₂-VASc</h3>
     <ul class="list">
       <li><b>C</b> (ХСН - ФВ 45%): <b>+1 балл</b></li>
       <li><b>H</b> (АГ 2 ст.): <b>+1 балл</b></li>
@@ -135,8 +135,8 @@ onMounted(async () => {
 }
 
 .title {
-  font-size: 60px;
-  margin-bottom: 100px;
+  font-size: 2vw;
+  margin-bottom: 2.5vw;
   text-align: center;
 }
 
@@ -144,25 +144,27 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-}
-
-.list {
-  font-size: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  gap: 3vw;
 }
 
 .photo {
+  width: 20vw;
+  height: 20vw;
+}
+
+.list {
+  font-size: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
 }
 
 .card-text {
-  font-size: 40px;
+  font-size: 1.5vw;
 }
 
 .card-button {
   position: relative;
-  margin: 50px auto 0;
+  margin: 2vw auto 0;
 }
 </style>

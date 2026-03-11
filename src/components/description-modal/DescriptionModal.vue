@@ -65,7 +65,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .description {
   position: absolute;
-  padding: 100px 150px;
+  padding: 3vw 5vw;
   width: 60vw;
   min-height: 30vh;
   display: flex;
@@ -80,24 +80,24 @@ onMounted(() => {
 
 .title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 60px;
+  margin-bottom: 1vw;
+  font-size: 2.5vw;
   font-weight: 600;
 }
 
 .text {
-  font-size: 40px;
+  font-size: 1.5vw;
 
   :deep(ol) {
     list-style-type: disc;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.4vw;
   }
 
   :deep(h3) {
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 0.8vw;
   }
 }
 
@@ -119,9 +119,9 @@ onMounted(() => {
 
 .close-btn {
   position: absolute;
-  top: -10px;
-  right: -20px;
-  height: 100px;
+  top: -1vw;
+  right: -1vw;
+  height: 5vw;
   cursor: pointer;
   transition: filter 0.3s ease 0s;
 

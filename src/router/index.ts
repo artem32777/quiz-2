@@ -10,7 +10,7 @@ import s6 from '@/slides/6/index.vue'
 import s7 from '@/slides/7/index.vue'
 
 const router = createRouter({
-  history: createMemoryHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: '1', component: s1 },
     { path: '/2', name: '2', component: s2 },
