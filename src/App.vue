@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import '@/assets/style/index.scss'
 import Text from '@/components/text/Text.vue'
-import Score from '@/components/layout/Score.vue'
 import Legend from '@/components/legend/Legend.vue'
 </script>
 
