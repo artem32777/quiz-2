@@ -1,0 +1,15 @@
+@use "reset";
+@use "font";
+@use "animation";
+
+html {
+  caret-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  background-color: #000;
+  overflow: hidden;
+}
+
+img {
+  -webkit-user-drag: none;
+}

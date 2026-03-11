@@ -1,0 +1,30 @@
+.scale-enter-active, .scale-leave-active {
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+}
+
+.scale-enter-from, .scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+// ===================================================== //
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 1s ease, filter 1s ease 0.5s;
+}
+
+.slide-enter-from, .slide-leave-to {
+  opacity: 0;
+  filter: grayscale(1);
+}
+
+// ===================================================== //
+.up-enter-active, .up-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s linear;
+}
+
+.up-enter-from, .up-leave-to {
+  opacity: 0;
+  transform: translateY(50%) scale(0.5);
+}
+
+// ===================================================== //

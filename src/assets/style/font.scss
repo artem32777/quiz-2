@@ -1,0 +1,12 @@
+body {
+  font-family: 'Audex', sans-serif;
+}
+
+@font-face {
+  font-family: 'Audex';
+  src: url('/fonts/Audex.woff2') format('woff2 supports variations'),
+  url('/fonts/Audex.woff2') format('woff2-variations');
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
