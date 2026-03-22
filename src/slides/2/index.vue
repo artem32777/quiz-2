@@ -35,7 +35,9 @@ onMounted(async () => {
     "
   />
 
-  <button
+  <img
+    src="@/slides/2/assets/button.webp"
+    alt="Кнопка"
     @click="router.push('/3')"
     class="timeline-btn"
     :class="{ active: state.timelineBtn }"
@@ -45,12 +47,12 @@ onMounted(async () => {
 <style scoped lang="scss">
 .timeline-btn {
   position: absolute;
-  bottom: 11%;
-  left: 6%;
-  width: 15vw;
-  height: 15vw;
+  bottom: 22%;
+  left: 11%;
   pointer-events: none;
   border-radius: 50%;
+  cursor: pointer;
+  transition: filter 0.3s ease 0s;
 
   &.active {
     pointer-events: auto;
@@ -58,7 +60,7 @@ onMounted(async () => {
 
   @media (any-hover: hover) {
     &:hover {
-      backdrop-filter: saturate(3);
+      filter: saturate(1.8);
     }
   }
 }

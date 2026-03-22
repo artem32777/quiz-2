@@ -11,7 +11,7 @@ const router = useRouter()
 
 const state = reactive({
   legend: false,
-  btn: false,
+  timelineBtn: false,
 })
 
 onMounted(async () => {
@@ -28,26 +28,27 @@ onMounted(async () => {
     string="Вы успешно предотвратили инсульт в 2021 году. Болезнь прогрессирует и нужно вернуться в 2023 год для анализа новых данных и предотвращения нового инсульта. <br> Нажмите на «2023»."
     top="40"
     width="50"
-    @print-ended="state.btn = true"
+    @print-ended="state.timelineBtn = true"
   />
 
-  <button
-    title="2023"
+  <img
+    src="@/slides/2/assets/button.webp"
+    alt="Кнопка"
     @click="router.push('/4')"
     class="timeline-btn"
-    :class="{ active: state.btn }"
+    :class="{ active: state.timelineBtn }"
   />
 </template>
 
 <style scoped lang="scss">
 .timeline-btn {
   position: absolute;
-  bottom: 11%;
-  left: 31%;
-  width: 15vw;
-  height: 15vw;
+  bottom: 22.6%;
+  left: 36.6%;
   pointer-events: none;
   border-radius: 50%;
+  cursor: pointer;
+  transition: filter 0.3s ease 0s;
 
   &.active {
     pointer-events: auto;
@@ -55,7 +56,7 @@ onMounted(async () => {
 
   @media (any-hover: hover) {
     &:hover {
-      backdrop-filter: saturate(2);
+      filter: saturate(1.8);
     }
   }
 }
