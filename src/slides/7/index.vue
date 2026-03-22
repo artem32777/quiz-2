@@ -10,13 +10,13 @@ import { sleep } from '@/utils/utils.ts'
 const router = useRouter()
 
 const state = reactive({
-  legend: false,
+  history: false,
   timelineBtn: false,
 })
 
 onMounted(async () => {
   await sleep(1000)
-  state.legend = true
+  state.history = true
 })
 </script>
 
@@ -24,7 +24,7 @@ onMounted(async () => {
   <Background :src="bg" />
 
   <Text
-    :show="state.legend"
+    :show="state.history"
     string="Вы успешно предотвратили инсульт в 2021 году. Болезнь прогрессирует и нужно вернуться в 2023 год для анализа новых данных и предотвращения нового инсульта. <br> Нажмите на «2023»."
     top="40"
     width="50"
@@ -43,8 +43,9 @@ onMounted(async () => {
 <style scoped lang="scss">
 .timeline-btn {
   position: absolute;
-  bottom: 22.6%;
-  left: 36.6%;
+  bottom: 22.9%;
+  left: 36.8%;
+  width: 4%;
   pointer-events: none;
   border-radius: 50%;
   cursor: pointer;

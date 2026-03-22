@@ -41,8 +41,9 @@ onMounted(async () => {
 <style scoped lang="scss">
 .timeline-btn {
   position: absolute;
-  bottom: 23%;
-  right: 30.65%;
+  bottom: 23.3%;
+  right: 30.85%;
+  width: 4%;
   pointer-events: none;
   border-radius: 50%;
   cursor: pointer;
