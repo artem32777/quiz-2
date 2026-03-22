@@ -13,6 +13,7 @@ import s6 from '@/slides/6/index.vue'
 import s7 from '@/slides/7/index.vue'
 import s9 from '@/slides/9/index.vue'
 import sMiniGame from '@/slides/mini-game/index.vue'
+import sPoint4 from '@/slides/point-4/index.vue'
 import sPoint5 from '@/slides/point-5/index.vue'
 import sFinal from '@/slides/final/index.vue'
 
@@ -32,6 +33,7 @@ const router = createRouter({
     { path: '/6', name: '6', component: s6 },
     { path: '/7', name: '7', component: s7 },
     { path: '/mini-game', name: 'mini-game', component: sMiniGame },
+    { path: '/point-4', name: 'point-4', component: sPoint4 },
     { path: '/point-5', name: 'point-5', component: sPoint5 },
     { path: '/9', name: '9', component: s9 },
     { path: '/final', name: 'final', component: sFinal },

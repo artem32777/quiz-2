@@ -13,6 +13,8 @@ const state = reactive({
   buttons: false,
   status: false,
   result: false,
+  resultBtn: false,
+  nextBtn: false,
 })
 
 onMounted(async () => {
@@ -32,32 +34,42 @@ onMounted(async () => {
       v-if="state.buttons"
       class="option-buttons"
     >
-      <div class="option-button">
+      <div class="option-button show">
         <Button
           @click="
             () => {
               state.result = false
               state.status = !state.status
+              state.resultBtn = true
             }
           "
         >
           Статус пациента
         </Button>
       </div>
-      <div class="option-button">
+
+      <div
+        :class="{ show: state.resultBtn }"
+        class="option-button"
+      >
         <Button
           @click="
             () => {
               state.result = !state.result
               state.status = false
+              state.nextBtn = true
             }
           "
         >
           Оценить результат
         </Button>
       </div>
-      <div class="option-button">
-        <Button @click="router.push('/6')">Далее</Button>
+
+      <div
+        :class="{ show: state.nextBtn }"
+        class="option-button"
+      >
+        <Button @click="router.push('/7')"> Далее </Button>
       </div>
     </div>
   </Transition>
@@ -103,6 +115,13 @@ onMounted(async () => {
 }
 
 .option-button {
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+
+  &.show {
+    opacity: 1;
+  }
+
   &:nth-child(1) {
     filter: hue-rotate(250deg);
   }
