@@ -336,6 +336,10 @@ onMounted(async () => {
   }
 }
 
+.table-img {
+  width: 50vw;
+}
+
 .dose {
   left: 27.5%;
   width: 21.7%;
