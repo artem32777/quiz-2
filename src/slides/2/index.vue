@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Button from '@/components/button/Button.vue'
 import { onMounted, reactive } from 'vue'
 import Text from '@/components/text/Text.vue'
 import { sleep } from '@/utils/utils.ts'

@@ -93,5 +93,9 @@ const wrapperBgImage = computed(() => {
     text-align: center;
     font-size: 2.5vw;
   }
+
+  .wrapper-medical-card & {
+    font-size: 1.5vw;
+  }
 }
 </style>

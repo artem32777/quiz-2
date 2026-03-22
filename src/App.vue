@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+import { useSounds } from '@/composables/useSounds.ts'
 import '@/assets/style/index.scss'
 import Text from '@/components/text/Text.vue'
 import Legend from '@/components/legend/Legend.vue'
+import { sleep } from '@/utils/utils.ts'
+
+// const router = useRouter()
+// const { click2Sound } = useSounds()
+//
+// router.beforeEach(async () => {
+//   // await sleep(500)
+//   // click2Sound.play()
+// })
 </script>
 
 <template>
@@ -26,6 +37,10 @@ import Legend from '@/components/legend/Legend.vue'
     <Text
       type="mission"
       string="2"
+    />
+    <Text
+      type="medical-card"
+      string="3"
     />
   </div>
 </template>

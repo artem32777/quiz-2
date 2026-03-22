@@ -28,3 +28,29 @@
 }
 
 // ===================================================== //
+.left-enter-active, .left-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s linear;
+}
+
+.left-enter-from, .left-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+// ===================================================== //
+.right-enter-active, .right-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s linear;
+}
+
+.right-enter-from, .right-leave-to {
+  opacity: 0;
+  transform: translateX(30%);
+}
+// ===================================================== //
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+// ===================================================== //

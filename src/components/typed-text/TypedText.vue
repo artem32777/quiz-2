@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, useTemplateRef } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 
@@ -10,8 +10,12 @@ const { string, typeSpeed = '0' } = defineProps<{
 
 const emit = defineEmits<{ completed: [void] }>()
 
+const typedStringRef = useTemplateRef<HTMLDivElement>('typedString')
+
 onMounted(() => {
-  let split = SplitText.create('.typed-string', { type: 'words' })
+  if (!typedStringRef.value) return
+
+  let split = SplitText.create(typedStringRef.value, { type: 'words' })
 
   gsap.from(split.words, {
     duration: 0.5,
@@ -30,6 +34,7 @@ onMounted(() => {
       class="default-string"
     />
     <div
+      ref="typedString"
       v-html="string"
       class="typed-string"
     />
