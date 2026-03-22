@@ -10,7 +10,6 @@ defineProps<{
     v-if="!isImage"
     loop
     autoplay
-    muted
     class="video"
     :src="src"
     type="video/mp4"
