@@ -32,7 +32,7 @@ onMounted(async () => {
   <img
     src="@/slides/2/assets/button.webp"
     alt="Кнопка"
-    @click="router.push('/4')"
+    @click="router.push('/point-5')"
     class="timeline-btn"
     :class="{ active: state.timelineBtn }"
   />

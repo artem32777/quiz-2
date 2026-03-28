@@ -79,6 +79,9 @@ const tableColumns = [
 // Хранилище выбранных айтемов для каждой ячейки
 const cellItems = reactive<Record<string, string[]>>({})
 
+// Ячейки с неправильным ответом (подсвечиваются красным)
+const wrongCells = reactive<Set<string>>(new Set())
+
 // Инициализация ячеек
 Object.values(tableCells)
   .flat()
@@ -147,6 +150,8 @@ const addItemAtemToCell = (itemId: string, cellId: string) => {
       // Если уже есть, удаляем (повторный клик удаляет айтем)
       targetItems.splice(index, 1)
     }
+    // Сбрасываем красный цвет при изменении значения ячейки
+    wrongCells.delete(cellId)
   }
 }
 
@@ -164,18 +169,17 @@ const checkResult = () => {
   state.result = true
 
   let allCorrect = true
+  wrongCells.clear()
 
   for (const [cellId, correctItems] of Object.entries(correctCombinations)) {
     const selectedItems = cellItems[cellId]
-    if (!selectedItems || selectedItems.length === 0) {
-      allCorrect = false
-      break
-    }
-    // Проверяем что хотя бы один из выбранных айтемов соответствует правильному
-    const hasCorrectItem = selectedItems.some((item) => correctItems.includes(item))
+    const hasCorrectItem =
+      selectedItems && selectedItems.length > 0
+        ? selectedItems.some((item) => correctItems.includes(item))
+        : false
     if (!hasCorrectItem) {
       allCorrect = false
-      break
+      wrongCells.add(cellId)
     }
   }
 
@@ -213,7 +217,7 @@ onMounted(async () => {
             препарата. Если ничего не хотите указывать в условиях, то выберите пункт «нет условий».
             Сопоставьте препарат, дозу, кратность приема и условия выбора дозы. У нашего пациента 67
             лет, КК: 45 мл/мин/, масса тела 87 кг, креатинин: 155 мкмоль/л"
-    top="1"
+    top="0"
     height="7"
     @print-ended="
       async () => {
@@ -246,6 +250,7 @@ onMounted(async () => {
           v-for="cell in column.cells"
           :id="`${column.type}-${cell}`"
           :key="`${column.type}-${cell}`"
+          :class="{ 'cell-wrong': wrongCells.has(`${column.type}-${cell}`) }"
           @dragover="onDragOver"
           @drop="onDrop(`${column.type}-${cell}`)"
           @click="onCellClick(`${column.type}-${cell}`)"
@@ -308,7 +313,7 @@ onMounted(async () => {
 <style scoped lang="scss">
 .table {
   position: absolute;
-  top: 17%;
+  top: 15%;
 
   div {
     position: absolute;
@@ -323,21 +328,28 @@ onMounted(async () => {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.6vw;
+      font-size: 0.8vw;
       word-break: break-word;
       padding: 1vw 0.5vw;
       color: white;
+      text-align: center;
+      line-height: 1;
 
       &:empty::before {
         content: '';
         display: block;
+      }
+
+      &.cell-wrong {
+        color: #ff4d4d;
       }
     }
   }
 }
 
 .table-img {
-  width: 50vw;
+  width: 65vw;
+  height: 19vw;
 }
 
 .dose {
