@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import bg from '@/slides/point-5/assets/bg.avif'
 import Background from '@/components/Background.vue'
-import { useRouter } from 'vue-router'
 import { onMounted, reactive } from 'vue'
-import warfarin from '@/slides/5/assets/drug-3.webp'
-import rivaroxaban from '@/slides/5/assets/drug-1.webp'
-import dabigatran from '@/slides/5/assets/drug-2.webp'
-import apixaban from '@/slides/5/assets/drug-4.webp'
 import { sleep } from '@/utils/utils.ts'
 import Text from '@/components/text/Text.vue'
 import Button from '@/components/button/Button.vue'
@@ -29,7 +24,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Background :src="bg" />
+  <Background
+    :src="bg"
+    is-image
+  />
 
   <Transition name="left">
     <img

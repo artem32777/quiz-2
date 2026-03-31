@@ -29,7 +29,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Background :src="bg" />
+  <Background
+    :src="bg"
+    is-image
+  />
 
   <Transition name="fade">
     <img

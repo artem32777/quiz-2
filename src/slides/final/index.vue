@@ -84,7 +84,7 @@ onMounted(async () => {
   <Transition name="fade">
     <img
       v-if="state.result"
-      src="@/slides/final/assets/result.webp"
+      src="@/slides/final/assets/result.avif"
       alt="Результат"
       class="result"
     />
