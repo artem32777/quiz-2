@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createMemoryHistory } from 'vue-router'
 import s0 from '@/slides/0/index.vue'
 import s1 from '@/slides/1/index.vue'
 import s2 from '@/slides/2/index.vue'

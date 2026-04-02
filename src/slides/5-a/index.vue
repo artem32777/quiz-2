@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import bg from '@/slides/5-a/assets/bg.webp'
+import bg from '@/slides/5-a/assets/bg.avif'
 import Background from '@/components/Background.vue'
 import { sleep } from '@/utils/utils.ts'
 import Text from '@/components/text/Text.vue'
@@ -30,7 +30,7 @@ onMounted(async () => {
 
   <Text
     :show="state.history"
-    string="Через 6 месяцев: TTR составляет всего 40[ШЕА8.1]%. Пациент жалуется на частые визиты в поликлинику (50 км от дома), забывает сдавать анализы. МНО нестабильно колеблется от
+    string="Через 6 месяцев: TTR составляет всего 40%. Пациент жалуется на частые визиты в поликлинику (50 км от дома), забывает сдавать анализы. МНО нестабильно, колеблется от
             1.5 до 3.8. Появились малые кровотечения - синяки, носовые кровотечения."
     top="80"
     height="7"
